@@ -1,0 +1,24 @@
+nav{
+  height: 40px;
+}
+
+.navbar-brand-centered {
+    position: absolute;
+    left: 45%;
+    display: block;
+    text-align: center;
+    background-color: transparent;
+}
+
+.carousel-item img {
+  width: auto;
+  height: 650px;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: brightness(50%);
+}
+
+.carousel-item {
+    background-color: #70ffdb;
+
+}
