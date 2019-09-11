@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+nav{
+  height: 65px;
+  top: 0;
+  overflow: auto;
+  width: 100%;
+}
+
+.navbar-brand-centered {
+    position: absolute;
+    left: 47%;
+    display: block;
+    text-align: center;
+    background-color: transparent;
+}
+
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";

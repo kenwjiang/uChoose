@@ -1,13 +1,14 @@
-nav{
-  height: 40px;
-}
 
-.navbar-brand-centered {
-    position: absolute;
-    left: 45%;
-    display: block;
-    text-align: center;
-    background-color: transparent;
+.jumbotron {
+  height: 650px;
+  background: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ), url(/assets/images/adults_eating.jpg) no-repeat center center;
+  background-size: contain;
+  background-color: #faff00;
+  margin: 0 auto;
+
 }
 
 .carousel-item img {
@@ -16,9 +17,17 @@ nav{
   margin: 0 auto;
   object-fit: contain;
   filter: brightness(50%);
+
 }
 
 .carousel-item {
-    background-color: #70ffdb;
+    background-color: #faff00;
+}
 
+.info_container{
+  width: 60%;
+  vertical-align: middle;
+  margin: 13% auto;
+  color:white;
+  text-align: center;
 }
