@@ -2,40 +2,23 @@
 
 
 <div class="form_container">
-<h5>hi</h5>
-  <mat-form-field>
-  <mat-label>Pick how many items to choose from!</mat-label>
-    <select matNativeControl required (change)="selected($event)">
-      <option></option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
-  </mat-form-field>
-
-  <span *ngIf="numOptions.length > 0">
-      <div *ngFor="let option of numOptions;" class="options_container">
-        <div class="eachOption d-inline-block w-25 mt-auto mb-auto">
-          <mat-form-field>
-            <mat-label>Search by... </mat-label>
-              <select matNativeControl required (change)="setSearchType($event)">
-                  <option></option>
-                  <option value="restaurantName">Restaurant Name</option>
-                  <option value="foodType">Food Type</option>
-              </select>
-          </mat-form-field>
-          <mat-form-field>
-              <mat-label>Enter Search Values</mat-label>
-              <input type="text" matNativeControl [(ngModel)]="searchValue" (keyup.enter)="addToQuery()">
-          </mat-form-field>
-
-        </div>
-      </div>
-  </span>
+  <ng-flash-message></ng-flash-message>
+  <h5>The limit is 10</h5>
+  <div *ngIf="searchList.length < 10;" class="options_container">
+    <div class="eachOption d-inline-block w-25 mt-auto mb-auto">
+      <mat-form-field>
+        <mat-label>Search by... </mat-label>
+          <select matNativeControl required (change)="setSearchType($event)">
+              <option></option>
+              <option value="restaurantName">Restaurant Name</option>
+              <option value="foodType">Food Type</option>
+          </select>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Enter Search Values</mat-label>
+          <input type="text" matNativeControl [(ngModel)]="searchQuery.value" (keyup.enter)="addToQuery()">
+      </mat-form-field>
+    </div>
+    <br><button mat-stroked-button color="accent" (click)="sendToWheel()">Choose</button>
+  </div>
 </div>

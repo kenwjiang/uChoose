@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LandingComponent } from './landing/landing.component';
 import { ChooseComponent } from './choose/choose.component';
+import { WheelComponent } from './wheel/wheel.component';
+
 
 const routes: Routes = [
-  {path: "", component: LandingComponent},
-  {path: "choose", component: ChooseComponent}
+  {path: "", component: ChooseComponent},
+  {path: "wheel", component: WheelComponent}
 
 ];
 
