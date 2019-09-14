@@ -1,16 +1,89 @@
 
-<div class="wheel_container">
-  <ngx-wheel
-      stroke="black"
-      [strokeWidth]="width"
-      [spinOnce]='true'
-      fontColor="white"
-      arrowColor="white"
-      [spinRange]="[10,15]"
-      centerText="wut"
-      [prizeToWin]="winner.value"
-      [prize_descriptions]="wheelOptions"
-      [colors]="['red', 'blue','red', 'blue','red', 'blue','red', 'blue','red', 'blue']">
-  </ngx-wheel>
+<div class="main">
 
-</div>
+  <div *ngIf="!mobile" class="wheel_container">
+    <ngx-wheel
+        stroke="black"
+        [strokeWidth]="4"
+        [spinOnce]='true'
+        fontColor="white"
+        arrowColor="white"
+        [spinRange]="[10,15]"
+        centerText="????"
+        [prizeToWin]="winner.value"
+        [prize_descriptions]="wheelOptions"
+        [colors]="['red', 'blue','red', 'blue','red', 'blue','red', 'blue','red', 'blue']"
+        (afterSpin)="yelpQuery()"
+        >
+    </ngx-wheel>
+  </div>
+
+  <div *ngIf="mobile" class="wheel_container_mobile">
+    <ngx-mobile-wheel
+        stroke="black"
+        [strokeWidth]="width"
+        [spinOnce]='true'
+        fontColor="white"
+        arrowColor="white"
+        [spinRange]="[10,15]"
+        centerText="wut"
+        [prizeToWin]="winner.value"
+        [prize_descriptions]="wheelOptions"
+        [colors]="['red', 'blue','red', 'blue','red', 'blue','red', 'blue','red', 'blue']"
+        (afterSpin)="yelpQuery()"
+        >
+    </ngx-mobile-wheel>
+  </div>
+
+  <!-- <div class="businesses_container">
+    <span *ngIf="businesses">
+      <div *ngFor="let business of businesses" class="shop_container">
+        <img src="{{business.image_url}}">
+        <div class="info_container">
+          <strong><a href="{{business.url}}"><h5>{{business.name}}</h5></a></strong>
+          <p>Address: {{business.location.address1}}, {{business.location.city}}</p>
+          <p>Phone: {{business.display_phone}}</p>
+          <img src="assets/yelp/{{business.rating}}_stars.png">
+          <p>Based on {{business.review_count}} Reviews</p>
+        </div>
+      </div>
+      <a href="https://www.yelp.com"><img src="assets/yelp/logo.png"></a>
+    </span>
+  </div>
+</div> -->
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchResults">
+  Launch demo modal
+</button>
+
+
+<span *ngIf="businesses">
+  <div class="modal fade" id="searchResults" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="winnerVal">Search results for: {{winner.value | titlecase}} powered by<a href="https://www.yelp.com"><img class="yelpLogo" src="assets/yelp/logo.png"></a></h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div *ngFor="let business of businesses" class="shop_container shadow p-3 mb-5 bg-white rounded ">
+            <img class="d-inline-block img-thumbnail" src="{{business.image_url}}">
+            <div class="info_container d-inline-block">
+              <strong><a href="{{business.url}}"><h5>{{business.name}}</h5></a></strong>
+              <p>Address: {{business.location.address1}}, {{business.location.city}}</p>
+              <p>Phone: {{business.display_phone}}</p>
+              <img src="assets/yelp/{{business.rating}}_stars.png">
+              <p>Based on {{business.review_count}} Reviews</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Spin Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</span>

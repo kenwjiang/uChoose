@@ -4,11 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ChooseService {
-  public searchList: any[];
+  public searchList: any;
   constructor() { }
 
 
-  setSearch(list: any[]){
+  setSearch(list){
     this.searchList = list;
   }
+
 }

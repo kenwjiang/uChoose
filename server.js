@@ -12,8 +12,6 @@ app.all("*", (req,res,next) => {
     res.sendFile(path.resolve("./public/dist/public/index.html"))
 });
 
-
-
 app.listen(8000, function(){
     console.log('Currently connected to port: 8000');
 });

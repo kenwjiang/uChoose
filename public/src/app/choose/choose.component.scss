@@ -1,3 +1,50 @@
 .form_container{
-  margin-top: 10%;
+  margin-top: 140px;
+}
+
+.list_container{
+  width: 100%;
+  margin: 0 0%;
+}
+
+.list_item{
+  background-color: #fff;
+  color: black;
+  width: 17%;
+  text-align: center;
+  display: inline-block;
+  padding: 10px;
+  margin: 1% 1%;
+  border-radius: 10px;
+}
+.list_item p {
+  vertical-align: middle;
+}
+
+.input_container{
+  margin: 3% auto;
+  width: 30%;
+  padding: 20px;
+  border: 1px solid #fff;
+  border-radius:10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.spin_button{
+  text-align: center;
+  background-color:white;
+  width: 30%;
+  margin: 2% auto;
+  border-radius: 10px;
+}
+.spin_button button{
+  width: 100%;
+  border: none;
+}
+::ng-deep.mat-form-field-ripple,  ::ng-deep.mat-form-field-underline{ /*change color of underline when focused*/ background-color: #e74c3c !important;
+ }
+
+::ng-deep.mat-form-field-label{
+  color: #e74c3c !important;
 }
