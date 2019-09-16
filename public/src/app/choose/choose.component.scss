@@ -5,20 +5,49 @@
 .list_container{
   width: 100%;
   margin: 0 0%;
+  text-align: center;
 }
 
 .list_item{
   background-color: #fff;
   color: black;
   width: 17%;
+  vertical-align: top;
   text-align: center;
   display: inline-block;
-  padding: 10px;
   margin: 1% 1%;
   border-radius: 10px;
 }
+
+.options-fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: .5s;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 .list_item p {
   vertical-align: middle;
+  padding: 10px;
+  margin: 2%;
 }
 
 .input_container{

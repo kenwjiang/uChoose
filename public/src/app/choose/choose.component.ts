@@ -43,8 +43,12 @@ export class ChooseComponent implements OnInit {
 
   // no database so storing info in the service
   sendToWheel(){
-    this.chooseService.setSearch(this.searchList);
-    this._router.navigate(['/wheel']);
+    if(this.searchList.length  < 2){
+      this.displayFlash("Must enter at least 2 choices!")
+    } else {
+      this.chooseService.setSearch(this.searchList);
+      this._router.navigate(['/wheel']);
+    }
   }
 
   private displayFlash(message){

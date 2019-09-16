@@ -4,15 +4,15 @@
   <div *ngIf="!mobile" class="wheel_container">
     <ngx-wheel
         stroke="black"
-        [strokeWidth]="4"
-        [spinOnce]='true'
-        fontColor="white"
-        arrowColor="white"
+        [strokeWidth]="1"
+        [spinOnce]='false'
+        fontColor="black"
+        arrowColor="black"
         [spinRange]="[10,15]"
-        centerText="????"
+        centerText="Click to spin!"
         [prizeToWin]="winner.value"
         [prize_descriptions]="wheelOptions"
-        [colors]="['red', 'blue','red', 'blue','red', 'blue','red', 'blue','red', 'blue']"
+        [colors]="['#3EB44A','#33A4A6', '#21469D','#ff5e59', '#6652A2','#C61C8E', '#ED1F23','#F25D22', '#F9DD00', '#A6CE39']"
         (afterSpin)="yelpQuery()"
         >
     </ngx-wheel>
@@ -20,49 +20,31 @@
 
   <div *ngIf="mobile" class="wheel_container_mobile">
     <ngx-mobile-wheel
-        stroke="black"
-        [strokeWidth]="width"
-        [spinOnce]='true'
-        fontColor="white"
-        arrowColor="white"
-        [spinRange]="[10,15]"
-        centerText="wut"
-        [prizeToWin]="winner.value"
-        [prize_descriptions]="wheelOptions"
-        [colors]="['red', 'blue','red', 'blue','red', 'blue','red', 'blue','red', 'blue']"
-        (afterSpin)="yelpQuery()"
-        >
+      stroke="black"
+      [strokeWidth]="1"
+      [spinOnce]='false'
+      fontColor="black"
+      arrowColor="black"
+      [spinRange]="[10,15]"
+      centerText="Click to spin!"
+      [prizeToWin]="winner.value"
+      [prize_descriptions]="wheelOptions"
+      [colors]="['#3EB44A','#33A4A6', '#21469D','#ff5e59', '#6652A2','#C61C8E', '#ED1F23','#F25D22', '#F9DD00', '#A6CE39']"
+      (afterSpin)="yelpQuery()"
+      >
     </ngx-mobile-wheel>
   </div>
 
-  <!-- <div class="businesses_container">
-    <span *ngIf="businesses">
-      <div *ngFor="let business of businesses" class="shop_container">
-        <img src="{{business.image_url}}">
-        <div class="info_container">
-          <strong><a href="{{business.url}}"><h5>{{business.name}}</h5></a></strong>
-          <p>Address: {{business.location.address1}}, {{business.location.city}}</p>
-          <p>Phone: {{business.display_phone}}</p>
-          <img src="assets/yelp/{{business.rating}}_stars.png">
-          <p>Based on {{business.review_count}} Reviews</p>
-        </div>
-      </div>
-      <a href="https://www.yelp.com"><img src="assets/yelp/logo.png"></a>
-    </span>
+  <div class="spin_button fade-in mt-4">
+    <button mat-stroked-button color="warn" class="shadow" [routerLink]="['/']">Input new items</button>
   </div>
-</div> -->
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchResults">
-  Launch demo modal
-</button>
-
 
 <span *ngIf="businesses">
   <div class="modal fade" id="searchResults" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title" id="winnerVal">Search results for: {{winner.value | titlecase}} powered by<a href="https://www.yelp.com"><img class="yelpLogo" src="assets/yelp/logo.png"></a></h3>
+          <h5 class="modal-title" id="winnerVal">Search results for "{{winner.value | titlecase}}"</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -74,14 +56,16 @@
               <strong><a href="{{business.url}}"><h5>{{business.name}}</h5></a></strong>
               <p>Address: {{business.location.address1}}, {{business.location.city}}</p>
               <p>Phone: {{business.display_phone}}</p>
-              <img src="assets/yelp/{{business.rating}}_stars.png">
-              <p>Based on {{business.review_count}} Reviews</p>
+              <div class="ratings">
+                <img class="d-inline-block my-1 p-3" src="assets/yelp/{{business.rating}}_stars.png">
+                <a href="https://www.yelp.com"><img class="w-25 d-inline-block align-top" src="assets/yelp/logo.png"></a>
+                <p class="d-block ">Based on {{business.review_count}} Reviews</p>
+              </div>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Spin Again</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Spin Again</button>
         </div>
       </div>
     </div>

@@ -12,22 +12,28 @@
   width: 50%;
 }
 
-// .shop_container:after{
-//   content:"__________________";
-//   text-align: center;
-//   color:grey;
-// }
-// .businessImg{
-//   width: 100px;
-//   height: 100px;
-//   display: inline-block;
-//   vertical-align: middle;
-// }
+
 
 .info_container{
-  // width:
+  margin: 2%;
 }
 
 .yelpLogo{
   width: 40%;
+}
+
+.spin_button{
+  text-align: center;
+  background-color:white;
+  width: 40%;
+  margin: 2% auto;
+  border-radius: 10px;
+}
+.spin_button button{
+  width: 100%;
+  border: none;
+}
+
+.info_container > a, p {
+  margin: 0;
 }

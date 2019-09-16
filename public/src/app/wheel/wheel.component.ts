@@ -33,11 +33,13 @@ export class WheelComponent implements OnInit{
     if(window.screen.width < 768){
       this.mobile = true;
     }
-    $("#searchResults").modal();
   }
 
     getSearchList(){
     this.searchList =  this.chooseService.searchList;
+    if(!this.searchList) {
+      this._router.navigate(['/']);
+    }
     for(let i = 0; i < this.searchList.length; i++){
       this.wheelOptions.push(this.searchList[i]['value']);
     }
@@ -65,6 +67,9 @@ export class WheelComponent implements OnInit{
       })
 
   }
+
+
+
 
   //get geolocation for yelp api call
   // getLocation(){

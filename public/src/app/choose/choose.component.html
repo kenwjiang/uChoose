@@ -3,24 +3,23 @@
 
 <div class="form_container">
   <div *ngIf="searchList.length > 0" class="list_container">
-      <div *ngFor="let item of searchList" class="list_item">
+      <div *ngFor="let item of searchList" class="list_item shadow options-fade-in">
         <p>{{item.value}}</p>
       </div>
   </div>
 
-  <div *ngIf="searchList.length < 10" class="input_container">
+  <div *ngIf="searchList.length < 10" class="input_container shadow fade-in">
   <ng-flash-message></ng-flash-message>
     <h5>Enter up to 10 choices</h5>
     <div class="options_container">
-      {{searchInput.value}}
       <mat-form-field>
           <mat-label>Enter Search Values</mat-label>
           <input type="text" matNativeControl [(ngModel)]="searchInput" (keyup.enter)="addToQuery()">
       </mat-form-field>
     </div>
   </div>
-  <div class="spin_button">
-    <button mat-stroked-button color="warn" (click)="sendToWheel()">Spin!</button>
+  <div class="spin_button fade-in">
+    <button mat-stroked-button color="warn" class="shadow" (click)="sendToWheel()">Spin!</button>
   </div>
 
 </div>
