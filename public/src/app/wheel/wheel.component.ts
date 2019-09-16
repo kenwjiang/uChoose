@@ -17,7 +17,6 @@ export class WheelComponent implements OnInit{
   mobile: boolean = false;;
   wheelOptions: string[];
   businesses:any[];
-  testLocation ={lng: "-121.9550085", lat:"37.4314693"}
 
 
   constructor(
@@ -58,7 +57,7 @@ export class WheelComponent implements OnInit{
     let longitude = "&longitude=";
     let searchQuery = "";
 
-    searchQuery += searchTerm + this.winner['value'] + latitude + this.testLocation['lat'] + longitude + this.testLocation['lng'];
+    searchQuery += searchTerm + this.winner['value'] + latitude + this.location['lat'] + longitude + this.location['lng'];
 
 
       this._apiService.search(searchQuery).subscribe(data=>{
@@ -72,22 +71,23 @@ export class WheelComponent implements OnInit{
 
 
   //get geolocation for yelp api call
-  // getLocation(){
-  //   if(navigator.geolocation){
-  //     navigator.geolocation.getCurrentPosition(this.setLocation);
-  //   }
-  //   else {
-  //     alert("You should allow location or this app wouldn't really work the way it's supposed to.")
-  //
-  //   }
-  // }
+  getLocation(){
+    alert("You should allow location or this app wouldn't really work the way it's supposed to.")
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(this.setLocation);
+    }
+    else {
+      alert("You should allow location or this app wouldn't really work the way it's supposed to.")
+
+    }
+  }
 
 
-  //private functions
-  // private setLocation(position){
-  //   this.location['lng'] = position.coords.longitude;
-  //   this.location['lat'] = position.coords.latitude;
-  // }
+  // private functions
+  private setLocation(position){
+    this.location['lng'] = position.coords.longitude;
+    this.location['lat'] = position.coords.latitude;
+  }
 
 
 
