@@ -27,8 +27,8 @@ export class WheelComponent implements OnInit{
 
   ngOnInit() {
     this.location={lng: "", lat: ""};
-    this.wheelOptions = [];
     this.getLocation();
+    this.wheelOptions = [];
     this.getSearchList();
     if(window.screen.width < 768){
       this.mobile = true;
