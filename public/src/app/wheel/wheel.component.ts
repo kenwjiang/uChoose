@@ -17,7 +17,6 @@ export class WheelComponent implements OnInit{
   mobile: boolean = false;;
   wheelOptions: string[];
   businesses:any[];
-  testLocation = {lng:"-121.955", lat:"37.4323"};
 
 
   constructor(
@@ -28,7 +27,7 @@ export class WheelComponent implements OnInit{
 
   ngOnInit() {
     this.location={lng: "", lat: ""};
-    // this.getLocation();
+    this.getLocation();
     this.wheelOptions = [];
     this.getSearchList();
     if(window.screen.width < 768){
@@ -36,7 +35,9 @@ export class WheelComponent implements OnInit{
     }
   }
 
-    getSearchList(){
+
+  //ngx wheel takes in an array for spin options
+  getSearchList(){
     this.searchList =  this.chooseService.searchList;
     if(!this.searchList) {
       this._router.navigate(['/']);
@@ -47,51 +48,48 @@ export class WheelComponent implements OnInit{
     this.winner = this.getWinner(this.searchList);
   }
 
+  // randomly generate winner
   getWinner(array){
     let index = Math.floor(Math.random() * Math.floor(array.length));
     return array[index];
   }
 
-  //yelp api call
+  //yelp api call sent to service
   yelpQuery(){
     let searchTerm = "?term=";
     let latitude = "&latitude=";
     let longitude = "&longitude=";
     let searchQuery = "";
 
-    searchQuery += searchTerm + this.winner['value'] + latitude + this.testLocation['lat'] + longitude + this.testLocation['lng'];
+    searchQuery += searchTerm + this.winner['value'] + latitude + this.location['lat'] + longitude + this.location['lng'];
 
 
       this._apiService.search(searchQuery).subscribe(data=>{
         this.businesses = data['businesses'];
-        console.log(this.businesses);
-        console.log("type", typeof($));
-        setTimeout($("#searchResults").modal("toggle"), 100);
+        setTimeout(function(){ $("#searchResults").modal("toggle")}, 100);
       })
 
   }
 
 
-
-
   //get geolocation for yelp api call
-  // getLocation(){
-  //   alert("You should allow location or this app wouldn't really work the way it's supposed to.")
-  //   if(navigator.geolocation){
-  //     navigator.geolocation.getCurrentPosition(this.setLocation);
-  //   }
-  //   else {
-  //     alert("You should allow location or this app wouldn't really work the way it's supposed to.")
-  //
-  //   }
-  // }
-  //
-  //
+  getLocation(){
+    alert("Allowing location will show search results for winning selection")
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(this.setLocation);
+    }
+    else {
+      alert("You should allow location or this app wouldn't really work the way it's supposed to.")
+
+    }
+  }
+
+
   // // private functions
-  // private setLocation(position){
-  //   this.location['lng'] = position.coords.longitude;
-  //   this.location['lat'] = position.coords.latitude;
-  // }
+  private setLocation(position){
+    this.location['lng'] = position.coords.longitude;
+    this.location['lat'] = position.coords.latitude;
+  }
 
 
 
