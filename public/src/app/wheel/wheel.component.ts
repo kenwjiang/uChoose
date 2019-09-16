@@ -17,7 +17,7 @@ export class WheelComponent implements OnInit{
   mobile: boolean = false;;
   wheelOptions: string[];
   businesses:any[];
-  testLocation = {lng:"-121.955", lat:"37.4323"}
+  testLocation = {lng:"-121.955", lat:"37.4323"};
 
 
   constructor(
@@ -28,7 +28,7 @@ export class WheelComponent implements OnInit{
 
   ngOnInit() {
     this.location={lng: "", lat: ""};
-    this.getLocation();
+    // this.getLocation();
     this.wheelOptions = [];
     this.getSearchList();
     if(window.screen.width < 768){
@@ -64,7 +64,9 @@ export class WheelComponent implements OnInit{
 
       this._apiService.search(searchQuery).subscribe(data=>{
         this.businesses = data['businesses'];
-        setTimeout(function(){$("#searchResults").modal("toggle");}, 100);
+        console.log(this.businesses);
+        console.log("type", typeof($));
+        setTimeout($("#searchResults").modal("toggle"), 100);
       })
 
   }
@@ -73,23 +75,23 @@ export class WheelComponent implements OnInit{
 
 
   //get geolocation for yelp api call
-  getLocation(){
-    alert("You should allow location or this app wouldn't really work the way it's supposed to.")
-    if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(this.setLocation);
-    }
-    else {
-      alert("You should allow location or this app wouldn't really work the way it's supposed to.")
-
-    }
-  }
-
-
-  // private functions
-  private setLocation(position){
-    this.location['lng'] = position.coords.longitude;
-    this.location['lat'] = position.coords.latitude;
-  }
+  // getLocation(){
+  //   alert("You should allow location or this app wouldn't really work the way it's supposed to.")
+  //   if(navigator.geolocation){
+  //     navigator.geolocation.getCurrentPosition(this.setLocation);
+  //   }
+  //   else {
+  //     alert("You should allow location or this app wouldn't really work the way it's supposed to.")
+  //
+  //   }
+  // }
+  //
+  //
+  // // private functions
+  // private setLocation(position){
+  //   this.location['lng'] = position.coords.longitude;
+  //   this.location['lat'] = position.coords.latitude;
+  // }
 
 
 
