@@ -12,7 +12,7 @@ declare const $: any;
 })
 export class WheelComponent implements OnInit{
   searchList: any;
-  location: {};
+  loc: {};
   winner:any;
   mobile: boolean = false;;
   wheelOptions: string[];
@@ -26,7 +26,6 @@ export class WheelComponent implements OnInit{
   ){}
 
   ngOnInit() {
-    this.location={lng: "", lat: ""};
     this.getLocation();
     this.wheelOptions = [];
     this.getSearchList();
@@ -61,7 +60,7 @@ export class WheelComponent implements OnInit{
     let longitude = "&longitude=";
     let searchQuery = "";
 
-    searchQuery += searchTerm + this.winner['value'] + latitude + this.location['lat'] + longitude + this.location['lng'];
+    searchQuery += searchTerm + this.winner['value'] + latitude + this.loc['lat'] + longitude + this.loc['lng'];
 
 
       this._apiService.search(searchQuery).subscribe(data=>{
@@ -76,7 +75,9 @@ export class WheelComponent implements OnInit{
   getLocation(){
     alert("Allowing location will show search results for winning selection")
     if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(this.setLocation);
+      navigator.geolocation.getCurrentPosition( location=>{
+        this.loc = {lat:location.coords['latitude'], lng:location.coords['longitude']};
+      });
     }
     else {
       alert("You should allow location or this app wouldn't really work the way it's supposed to.")
@@ -85,11 +86,6 @@ export class WheelComponent implements OnInit{
   }
 
 
-  // // private functions
-  private setLocation(position){
-    this.location['lng'] = position.coords.longitude;
-    this.location['lat'] = position.coords.latitude;
-  }
 
 
 
