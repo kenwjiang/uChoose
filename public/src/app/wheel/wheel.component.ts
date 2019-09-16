@@ -17,6 +17,7 @@ export class WheelComponent implements OnInit{
   mobile: boolean = false;;
   wheelOptions: string[];
   businesses:any[];
+  testLocation = {lng:"-121.955", lat:"37.4323"}
 
 
   constructor(
@@ -58,7 +59,7 @@ export class WheelComponent implements OnInit{
     let longitude = "&longitude=";
     let searchQuery = "";
 
-    searchQuery += searchTerm + this.winner['value'] + latitude + this.location['lat'] + longitude + this.location['lng'];
+    searchQuery += searchTerm + this.winner['value'] + latitude + this.testLocation['lat'] + longitude + this.testLocation['lng'];
 
 
       this._apiService.search(searchQuery).subscribe(data=>{
