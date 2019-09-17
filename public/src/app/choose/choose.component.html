@@ -3,9 +3,11 @@
 
 <div class="form_container">
   <div *ngIf="searchList.length > 0" class="list_container">
-      <div *ngFor="let item of searchList" class="list_item shadow options-fade-in">
-        <p>{{item.value}}</p>
+      <div *ngFor="let item of searchList" (click)="removeItem(item)" class="list_item shadow options-fade-in">
+        <p class="item_val">{{item.value}}</p>
+        <p class="hover_msg">remove</p>
       </div>
+
   </div>
 
   <div *ngIf="searchList.length < 10" class="input_container shadow fade-in">

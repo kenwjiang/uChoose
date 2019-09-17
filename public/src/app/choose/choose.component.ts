@@ -16,6 +16,7 @@ export class ChooseComponent implements OnInit {
 
   searchInput:string;
   searchList: any[];
+  hover: boolean;
 
   constructor(
     private ngFlashMessageService: NgFlashMessageService,
@@ -27,6 +28,7 @@ export class ChooseComponent implements OnInit {
   ngOnInit() {
     this.searchInput = "";
     this.searchList=[];
+    this.hover=false;
   }
 
 
@@ -49,6 +51,11 @@ export class ChooseComponent implements OnInit {
       this.chooseService.setSearch(this.searchList);
       this._router.navigate(['/wheel']);
     }
+  }
+
+  // remove option
+  removeItem(item){
+    this.searchList.splice(this.searchList.indexOf(item), 1);
   }
 
   private displayFlash(message){

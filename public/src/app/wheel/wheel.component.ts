@@ -67,7 +67,6 @@ export class WheelComponent implements OnInit{
         this.businesses = data['businesses'];
         setTimeout(function(){ $("#searchResults").modal("toggle")}, 100);
       })
-
   }
 
 

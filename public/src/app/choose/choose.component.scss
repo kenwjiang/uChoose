@@ -1,11 +1,18 @@
 .form_container{
-  margin-top: 140px;
+  margin-top: 170px;
 }
 
 .list_container{
   width: 100%;
   margin: 0 0%;
   text-align: center;
+}
+
+.item_val {
+  display:block;
+  justify-content: center;
+  margin: 2%;
+  padding: 10px;
 }
 
 .list_item{
@@ -18,7 +25,27 @@
   margin: 1% 1%;
   border-radius: 10px;
 }
+.hover_msg{
+  display:none;
+  justify-content: center;
+  margin: 2%;
+  padding: 10px;
+}
 
+.list_item:hover{
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  color: white;
+}
+
+.list_item:hover .item_val{
+  display:none;
+}
+
+.list_item:hover .hover_msg{
+  display: block;
+
+}
 
 .options-fade-in {
 	opacity: 1;
@@ -45,12 +72,24 @@
 	}
 }
 
-.list_item p {
-  // text-align: center;
-  justify-content: center;
-  margin: 2%;
-  padding: 10px;
-}
+
+// .hover_msg {
+//   visibility:hidden;
+// }
+//
+// .item_val:hover{
+//   visibility: hidden;
+// }
+// .hover_msg:hover{
+//   width: 100%;
+//   height: 100%;
+//   visibility: visible;
+//   text-align: center;
+//   padding: 5px;
+//   position: absolute;
+//   background-color: rgba(0,0,0, 0.6);
+//   z-index: 1;
+// }
 
 .input_container{
   margin: 3% auto;

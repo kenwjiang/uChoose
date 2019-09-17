@@ -31,17 +31,17 @@ body {
 	transition: all 0.5s;
 }
 
-.ha-header-perspective {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	-webkit-perspective: 1100px;
-	-moz-perspective: 1100px;
-	perspective: 1100px;
-	-webkit-perspective-origin: 50% 0;
-	-moz-perspective-origin: 50% 0;
-	perspective-origin: 50% 0;
-}
+// .ha-header-perspective {
+// 	width: 100%;
+// 	height: 100%;
+// 	position: relative;
+// 	-webkit-perspective: 1100px;
+// 	-moz-perspective: 1100px;
+// 	perspective: 1100px;
+// 	-webkit-perspective-origin: 50% 0;
+// 	-moz-perspective-origin: 50% 0;
+// 	perspective-origin: 50% 0;
+// }
 
 .ha-header-perspective > div {
 	background: #fff;
@@ -164,7 +164,7 @@ body {
 
 
 .ha-header-small {
-	height: 220px;
+	height: 120px;
 }
 
 
