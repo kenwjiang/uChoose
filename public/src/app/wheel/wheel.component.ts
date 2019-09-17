@@ -50,7 +50,6 @@ export class WheelComponent implements OnInit{
   // randomly generate winner
   getWinner(array){
     let index = Math.floor(Math.random() * Math.floor(array.length));
-    console.log(index)
     return array[index];
   }
 
@@ -77,10 +76,11 @@ export class WheelComponent implements OnInit{
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition( location=>{
         this.loc = {lat:location.coords['latitude'], lng:location.coords['longitude']};
+        if(this.loc['lat'] == null || this.loc['lng'] == null){
+          alert("Enabling location will return results of the winning entry.")
+        }
       });
-      if(!this.loc){
-        alert("Enabling location will return results of the winning entry.")
-      }
+
     }
     else {
       alert("You should allow location or this app wouldn't really work the way it's supposed to.")
