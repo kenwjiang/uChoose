@@ -19,6 +19,7 @@
   border-radius: 10px;
 }
 
+
 .options-fade-in {
 	opacity: 1;
 	animation-name: fadeInOpacity;
@@ -45,9 +46,10 @@
 }
 
 .list_item p {
-  vertical-align: middle;
-  padding: 10px;
+  // text-align: center;
+  justify-content: center;
   margin: 2%;
+  padding: 10px;
 }
 
 .input_container{

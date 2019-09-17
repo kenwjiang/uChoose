@@ -28,7 +28,8 @@ export class WheelComponent implements OnInit{
   ngOnInit() {
     this.getLocation();
     this.wheelOptions = [];
-    this.getSearchList();
+    this.searchList =  this.chooseService.searchList;
+    this.populateWheel();
     if(window.screen.width < 768){
       this.mobile = true;
     }
@@ -36,8 +37,7 @@ export class WheelComponent implements OnInit{
 
 
   //ngx wheel takes in an array for spin options
-  getSearchList(){
-    this.searchList =  this.chooseService.searchList;
+  populateWheel(){
     if(!this.searchList) {
       this._router.navigate(['/']);
     }
@@ -50,6 +50,7 @@ export class WheelComponent implements OnInit{
   // randomly generate winner
   getWinner(array){
     let index = Math.floor(Math.random() * Math.floor(array.length));
+    console.log(index)
     return array[index];
   }
 
@@ -73,18 +74,22 @@ export class WheelComponent implements OnInit{
 
   //get geolocation for yelp api call
   getLocation(){
-    alert("Allowing location will show search results for winning selection")
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition( location=>{
         this.loc = {lat:location.coords['latitude'], lng:location.coords['longitude']};
       });
+      if(!this.loc){
+        alert("Enabling location will return results of the winning entry.")
+      }
     }
     else {
       alert("You should allow location or this app wouldn't really work the way it's supposed to.")
-
     }
   }
 
+  reSpin(){
+    this.populateWheel();
+  }
 
 
 
