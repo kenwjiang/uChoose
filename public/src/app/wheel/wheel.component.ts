@@ -88,6 +88,7 @@ export class WheelComponent implements OnInit{
   }
 
   reSpin(){
+    this.wheelOptions = [];
     this.populateWheel();
   }
 
