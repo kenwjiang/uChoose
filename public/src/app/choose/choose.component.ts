@@ -17,6 +17,7 @@ export class ChooseComponent implements OnInit {
   searchInput:string;
   searchList: any[];
   hover: boolean;
+  toolTip: string;
 
   constructor(
     private ngFlashMessageService: NgFlashMessageService,
@@ -29,6 +30,7 @@ export class ChooseComponent implements OnInit {
     this.searchInput = "";
     this.searchList=[];
     this.hover=false;
+    this.toolTip = `<h5>Welcome to uChoose</h5>\n<p>Input values for type of foods you want to eat, restaurants you want to choose from, or various entertainment values to choose from. Enter 3-10 options then press the spin button. The app will randomly select a winner and display nearest businesses with the winning value in your area, powered by yelp. </p>\n <p><strong>Please enable location when prompted!</strong></p>`
   }
 
 

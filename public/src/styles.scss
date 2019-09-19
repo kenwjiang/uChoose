@@ -281,9 +281,23 @@ body {
 		font-size: .8em;
 	}
 }
-@media screen and (max-width: 375px){
+@media screen and (max-width: 376px){
 	.input_container, .spin_button{
 		font-size: .7em;
+		width: 65% !important;
+	}
+	.options_container {
+		margin: 3% 0;
+		mat-form-field{
+			margin: 1% 0;
+			input{
+				font-size: 1.5em;
+				height: 30px;
+			}
+		}
+		button {
+			margin: 2% 0;
+		}
 	}
 	.list_item {
 		font-size: .7em;
