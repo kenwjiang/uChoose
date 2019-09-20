@@ -16,7 +16,10 @@ app.set('views', __dirname + '/');
 app.get("/portfolio", (req, res)=>{
     res.render('index');
 })
-app.all("*", (req,res,next) => {
+app.all("", (req,res,next) => {
+    res.sendFile(path.resolve("./public/dist/public/index.html"))
+});
+app.all("/wheel", (req,res,next) => {
     res.sendFile(path.resolve("./public/dist/public/index.html"))
 });
 
