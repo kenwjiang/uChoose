@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Kenny's Portfolio!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body>
+    <!-- header  -->
+      <div class="navbar">
+        <header id="header" class="shadow full-header">
+            <div class="header_title">
+              <div class="photo" data-aos="flip-right" data-aos-duration="2000"  ><img id="main_pic" src="images/icon_pic.png" alt="it's me!"></div>
+              <h1><span style="color: red;">Kenny</span> W. Jiang</h1>
+              <p>Full Stack Web Developer</p>
+            </div>
+            <div class="icon">
+                <img src="images/icon.png" alt="icon">
+            </div>
+              <nav>
+                <a id="about_me" href="#">About me</a>
+                <a id="projects" href="#">Projects</a>
+                <a id="contact" href="#">Contact</a>
+              </nav>
+          </header>
+      </div>
+    
+
+      <!-- main body -->
+      <div id="body" class="main_container">
+        <!-- info container -->
+        <div class="about_me shadow"  data-aos="fade-in">
+          <div class="name_container">
+            <p>K.</p>
+            <p><span style="color: red">Wenjun</span></p>
+            <p>Jiang</p>
+          </div>
+          <div class="basic_info">
+            <p><i>Did I tell you I'm a Full Stack Developer?</i></p>
+            <p>At age 27, I decided to uproot my life in Service Industry and commit to Software and Web Development. I attended Coding Dojo's Full Stack Web Development course, and while I learned many technologies and languages during the course, the best thing I learned is the ability to learn anything in a short amount of time through determination and throwing an absurd amount of hours into the process.</p>
+            <li>Favorite Languages: <span style="color:#3775A9">Python</span> <img src="images/python.png" style="width: 15px; width: 15px;" alt="python"> & Java<span class="mr-1" style="color:#E9D54D">Script</span><img src="images/js.png" alt="javscript" style="width: 15px; height: 15px;"></li>
+            <li>Favorite Frameworks: MEAN / MERN<img class="ml-1" src="images/mean.png" style="width: 15px; height: 15px"></li>
+            <li>Favorite Dota2 Player: Artour <span style="color: blue;">'Arteezy'</span> Babaev <img src="images/eg.png" style="width: 30px; height: 30px;" alt="eg"></li>
+            <li>Favorite Basketball Player: Klay Thompson <img src="images/klay.png" alt="klay" style="height: 30px; width: 30px;"></li>
+          </div>
+        </div>
+
+
+        <div class="project_container">
+          <div class="project shadow" data-aos="fade-right">
+            <div class="picture_container shadow-lg">
+                <img src="/images/uChoose.png" class="img-thumbnail" style=" max-height: 200px" alt="uChoose">
+            </div>
+
+            <div class="project_info">
+              <h5><span style="color: #e74c3c; padding: 5px 15px; border: 5px solid #e74c3c">uChoose</span> | <a href="https://www.uChoose.link">https://www.uChoose.link</a></h5>
+              <p class="mt-3">The field of Psychology has a term called Overchoice, which is the cognitive process which people have trouble making decisions when faced with an abundance of options. My girlfriend and I sometimes would take up to an <strong>hour and a half</strong> to decide where to eat.</p>
+              <p>uChoose is built to help indecisive people like us make quick decisions, whether its restaurants to eat at, which type of food to choose, what activities to do for the weekend, or where to get a beer, just input it and spin! The winner is randomly selected and returns local options for the winning value. Powered by Yelp API.</p>
+              <div class="tech_container">
+                <p>Technologies: </p><br>
+                <img src="images/html5.png" alt="html5">
+                <img src="images/css3.png" alt="css">
+                <img src="images/js.png" alt="js">
+                <img src="images/jquery.png" alt="jquery">
+                <img src="images/bootstrap.png" alt="bootstrap">
+                <img src="images/angular.png" alt="angular">
+                <img src="images/express.png" alt="express">
+                <img src="images/node.png" alt="node">
+                <img src="images/aws.png" alt="aws">
+              </div>
+              <button style="float:right;" id="chooseToggle" class="btn btn-primary mt-3">Watch Demo</button>
+            </div>
+
+            <div class="video_container" id="chooseVid">
+                <iframe class="video d-inline-block ml-3" width="420" height="345" src="https://www.youtube.com/embed/UtajPl5SCq8">
+                </iframe>
+                <iframe class="video d-inline-block" width="420" height="345" src="https://www.youtube.com/embed/DpHhas97rNg">
+                </iframe>
+            </div>
+          </div>
+
+          <div class="project shadow" data-aos="fade-left">
+              <div class="project_info middle" id="lean_right">
+                <h5><span style="color: #306499; padding: 5px 15px; border: 5px solid #306499">LineUp</span> | <a href="http://54.183.188.156/lineup">LineUp Link</a></h5>
+                <p class="mt-3" style="text-decoration: underline;">Employee Scheduling Web App</p>
+                <p>LineUp is my first collaborative project and how I developed a sense for Git, working with different branches and merges, as well as collaborative planning for different stages of the project.</p>
+                <p>Project utilizes Java, Spring Framework, and MySQL database combined with FullCalendar.io, an interactive calendar package. Managers can set employee access levels, click to schedule employees, and approve/deny users for day off requests.</p>
+                <div class="tech_container">
+                  <p>Technologies: </p><br>
+                  <img src="images/html5.png" alt="html5">
+                  <img src="images/css3.png" alt="css">
+                  <img src="images/js.png" alt="js">
+                  <img src="images/jquery.png" alt="js">
+                  <img src="images/bootstrap.png" alt="bootstrap">
+                  <img src="images/java.png" alt="java">
+                  <img src="images/spring.png" alt="spring">
+                  <img style="width: 75px; height: 39px" src="images/mysql.png" alt="mysql">
+                  <img src="images/aws.png" alt="aws">
+                </div>
+                <button id="lineupToggle" class="btn btn-primary mt-3">Watch Demo</button>
+              </div>
+              <div class="picture_container">
+                  <img src="images/lineup.png" style="max-width: 200px;" alt="Line Up Site Pic">
+              </div>
+              <div class="video_center" id="lineupVid">
+                  <iframe class="video d-inline-block" width="420" height="345" src="https://www.youtube.com/embed/MLN35LqbdjE">
+                  </iframe>
+              </div>
+            </div>
+          </div>
+
+          <div class="project shadow" data-aos="fade-right">
+            <div class="picture_container">
+                <img src="images/fitFriends.png" style="max-width: 200px" alt="fitFriends">
+            </div>
+            <div class="project_info">
+              <h5><span style="color: #573E7B; padding: 5px 15px; border: 5px solid #573E7B">fitFriends</span> | <a href="#"><s>https://fitFriends.com</s></a></h5>
+              <p style="margin-top: 3%;"><span style="color:red; font-style: italic;">Under Construction!</span></p>
+              <p class="mt-3" style="text-decoration: underline;">Gym buddy finder</p>
+              <p>During my journey as a Service Industry Representitive, my working hours differ from the normal 9am - 5pm. I had just started my fitness lifestyle and it was very intimitating, it was hard to find people with the same mindset I had for personal goals and it was even harder to find people of similar schedules.</p>
+              <p>fitFriends brings together people similar schedules and goals. Users have to register, set their default gym (powered by Google Places API & Google Maps API) and fill out a preference form which includes their fitness goals, gender preference, and schedule. Members of the same gym then are shown a list of people with the most preference matches to least, with gender preference being the most important. Users then can use the real-time chat application (powered by socket.io) to connect with each other.</p>
+              <div class="tech_container">
+                  <p>Technologies: </p><br>
+                  <img src="images/html5.png" alt="html5">
+                  <img src="images/css3.png" alt="css">
+                  <img src="images/js.png" alt="js">
+                  <img src="images/jquery.png" alt="jquery">
+                  <img src="images/bootstrap.png" alt="bootstrap">
+                  <img src="images/angular.png" alt="angular">
+                  <img src="images/express.png" alt="express">
+                  <img src="images/node.png" alt="node">
+                  <img src="images/mongodb.png" alt="mongodb">
+                  <img src="images/google.png" alt="google">
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="shadow">
+          	&nbsp;
+          <div class="footer_container">
+              <div class="footer">
+                  <p>Like what you see? Send me a message!</p>
+                  <a href="https://github.com/kenwjiang"><i class="fab fa-github fa-3x"></i></a>
+                  <a href="https://www.linkedin.com/in/kenwjiang"><i class="fab fa-linkedin fa-3x"></i></a>
+                  <a href="https://twitter.com/kwjiang"><i class="fab fa-twitter-square fa-3x"></i></a>
+                  <a href="#"><i class="fab fa-facebook-square fa-3x"></i></a>
+                  <a href="mailto:kenwjiang@gmail.com"><i class="fas fa-envelope fa-3x"></i></a><br>
+                  <p class="mt-3" style="font-size: 1.2em;"><i class="fas fa-mobile-alt"></i> (650)515-5989</p>
+              </div>
+          </div>
+        </footer>
+    </div>
+
+
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+        AOS.init({
+          offset:200,
+          duration: 1500
+        });
+  </script>
+  <script src="/js/noframework.waypoints.js"></script>
+  <script>
+    var waypoint = new Waypoint({
+      element: document.getElementById('body'),
+      handler: (direction)=>{
+        if(direction == 'down') {
+          $('#header').removeClass('full-header').addClass('small-header');
+        } else if (direction == 'up'){
+          $('#header').removeClass('small-header').addClass('full-header');
+        }
+      }, offset: '50%'
+    })
+
+    $('#chooseToggle').on('click', ()=>{
+      $('#chooseVid').toggle(300);
+    })
+
+    $('#lineupToggle').on('click', ()=>{
+      $('#lineupVid').toggle(300);
+    })
+    $('#about_me').click(()=>{
+      $('html,body').animate({
+        scrollTop: $('.about_me').offset().top - ($('.navbar').height()/3)}, 'slow');
+    })
+    $('#projects').click(()=>{
+      $('html,body').animate({
+        scrollTop: $('.project_container').offset().top - ($('.about_me').height()/2)}, 'slow');
+    })
+    $('#contact').click(()=>{
+      $('html,body').animate({
+        scrollTop: $('footer').offset().top}, 'slow');
+    })
+  </script>
+  </body>
+</html>
