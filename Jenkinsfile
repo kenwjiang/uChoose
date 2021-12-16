@@ -1,11 +1,11 @@
 pipeline {
-    agent { docker { image 'node:16.13.1-alpine' } }
+    agent any
     stages {
-        stage('build') {
+        stage('docker build') {
             steps {
-                sh 'node --version'
-                sh "cd /public"
-                sh "npm run-script build"
+                container('docker'){
+                    sh "docker build -t kennyhardatwork/dockertest1 ."
+                }
             }
         }
     }
