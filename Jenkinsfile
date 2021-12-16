@@ -1,11 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:16.13.1-alpine' }
+    }
     stages {
-        stage('docker build') {
+        stage('Test') {
             steps {
-                container('docker'){
-                    sh "docker build -t kennyhardatwork/dockertest1 ."
-                }
+                sh 'node --version'
             }
         }
     }
