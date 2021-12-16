@@ -1,12 +1,11 @@
 pipeline {
-    agent any
+    agent { docker { image 'node:16.13.1-alpine' } }
     stages {
         stage('build') {
             steps {
-                sh "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg"
-                sh 'docker --version'
+                sh 'node --version'
                 sh "cd /public"
-                sh "docker build -t kenwjiang/test1 ."
+                sh "npm run-script build"
             }
         }
     }
